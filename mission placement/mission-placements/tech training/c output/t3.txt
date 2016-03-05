@@ -1,0 +1,5 @@
+#include <stdio.h>
+int main(void)
+{
+	printf("%d %d %d %d %d",5%2,-5%2,5%-2,-5%3, 5.4%3);
+}

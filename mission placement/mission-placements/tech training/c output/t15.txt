@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main(void)
+{
+	char a='x';
+	char *p=&a;
+	printf("%d %d %d %d",sizeof(a),sizeof(*p),sizeof(p)); //Notice the extra %d and see that it prints garbage
+}
+/*
+ Size of a pointer is 4 bytes since it gives an address, i.e. an unsigned number.
+*/

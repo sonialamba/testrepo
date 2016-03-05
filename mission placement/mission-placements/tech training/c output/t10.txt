@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main(void)
+{
+	unsigned int i;
+	for(i=0;i>-2;i--)
+		printf("Hello");
+		
+	signed char j=0;
+	for(;j>=0;j++);
+	
+	printf("%d\n",j);
+}

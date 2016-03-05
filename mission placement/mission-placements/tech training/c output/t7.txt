@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main(void)
+{
+	printf("%d\n",sizeof(int)); //4
+	
+	int a[]={100,258,200,500,514,492,45};
+	char *p=a;
+	p=p+4;
+	printf("%d",*p);
+}

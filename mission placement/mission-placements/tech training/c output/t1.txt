@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main(void)
+{
+	int si,p=10,n=5,r=3;
+	si=p*n*r//*formula*//100;
+	printf("%d\n",si);
+	
+	/*Formula is:
+	/*
+	Prin*No of years*Rate/100
+	*/
+	*/
+}

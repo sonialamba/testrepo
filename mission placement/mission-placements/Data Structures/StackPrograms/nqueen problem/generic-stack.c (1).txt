@@ -1,0 +1,74 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+struct stack
+{
+       struct node *top;
+       int c;
+};
+struct node
+{
+       void *data;
+       struct node *next;
+};
+
+
+stack* createstack()
+{
+       struct stack *s=(stack*)malloc(sizeof(stack));
+       s->c=0;
+       s->top=NULL;
+       return s;
+}
+
+void push(struct stack *s,void *d)
+{
+     struct node *n=(node*)malloc(sizeof(node));
+     n->data=d;
+     n->next=s->top;
+     s->top=n;
+     (s->c)++;
+}
+
+
+
+
+int stackcount(struct stack *s)
+{
+    return s->c;
+}
+
+int stackempty(struct stack *s)
+{
+    if((s->c)==0)
+    return 1;
+    else
+    return 0;
+}
+
+void* pop(struct stack *s)
+{
+      if( stackempty(s) )
+      return NULL;
+      else
+      {
+          struct node *n;
+          n=s->top;
+          s->top=n->next;
+          void *data=n->data;
+          free(n);
+           (s->c)--;
+          return data;
+      }
+}
+
+void* stacktop(struct stack *s)
+{
+      if( stackempty(s) )
+      return NULL;
+      else
+          return s->top->data;
+}
+
+
+

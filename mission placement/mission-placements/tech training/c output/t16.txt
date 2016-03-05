@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main(void)
+{
+	char *p="Hello";
+	char q[]="Hello";
+	
+	p[1]='i'; //p is a pointer to a constant string. This is not allowed.
+	q[1]='i'; //this is allowed
+	
+	char *t="Another string";
+	
+	p=t; //This is allowed.
+	q=t; //q is a constant pointer. This is not allowed.
+	
+	return 0;
+}

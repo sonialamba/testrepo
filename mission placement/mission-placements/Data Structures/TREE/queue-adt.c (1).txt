@@ -1,0 +1,90 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+
+struct node 
+{
+       void *data;
+       struct node *next;
+};
+struct queue
+{
+       struct node *front;
+       struct node *rear;
+       int c;
+};
+
+queue* createqueue()
+{
+     struct queue *q=(queue*)malloc(sizeof(queue));
+     q->front=NULL;
+     q->rear=NULL;
+     q->c=0;
+     return q;
+}
+
+void enqueue(struct queue *q,void *d)
+{
+     struct node *n=(node*)malloc(sizeof(node));
+     n->data=d;
+     n->next=NULL;
+     if( q->front == NULL )
+     {
+        q->rear=n;
+        q->front=n;
+     }
+     else
+     {
+         q->rear->next=n;
+         q->rear=n;
+     }
+     ( q->c )++;
+}
+
+
+int queueempty(struct queue *q)
+{
+    if( q->front==NULL)
+    return 1;
+    else
+    return 0;
+}
+
+void* dequeue(struct queue *q)
+{
+      if( queueempty(q) )
+      return NULL;
+      else
+      {
+          struct node *n=q->front;
+          q->front=n->next;
+          void *data=n->data;
+          free(n);
+          return data;
+      }
+}
+
+
+void* queuefront(struct queue *q)
+{
+     if( !queueempty(q) )
+     return q->front->data;
+     else
+     return NULL;
+}
+
+int queuecount(struct queue *q)
+{
+    return q->c;
+}
+
+void disp(struct queue *q)
+{
+     struct node *n=q->front;
+     while(n!=NULL)
+     {
+                   printf("%d ", * ((int*) n->data ) );
+                   n=n->next;
+     }
+}
+  

@@ -1,0 +1,158 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+
+char *xsubstring(char *str,char *p,int s,int e)
+{
+     int i=0;
+     while( (s+i) < e)
+     {
+           *(p+i)=*(str+i+s);              //start is inclusive and ending is exclusive
+           i++;
+     }
+     *(p+i)='\0';
+     
+}
+
+
+char* xstrncat(char *source,char *target,int n)
+{
+     char *p=source;
+     char *temp=source;
+     
+     while( *source )
+     source++;
+     
+     int i=0;
+     
+     while( i < n )
+     {
+       *source=*target;
+        source++;
+        target++;
+        i++;
+     }
+     *source='\0';
+     return p;
+}
+
+char* xstrcat(char *source,char *target)
+{
+     char *p=source;
+     while( *source ) 
+     source++;
+     
+     while( *target )
+     {
+            *source=*target;
+            source++;
+            target++;
+     }
+     source='\0';
+     return p;
+}
+
+
+char* xstrlwr(char *s)
+{
+      char *p=s;
+      while(*s)
+      {
+      if( *s>=65 && *s<=90 )
+      *s+=32;
+      s++;
+      }
+      return p;
+}
+      
+
+char* xstrupr(char *s)
+{
+      char *p=s;
+      while(*s)
+      {
+      if( *s>=97 && *s<=112 )
+      *s+=32;
+      s++;
+      }
+      return p;
+}
+
+char *xstrchr(char *s,char c)
+{
+     char *p=NULL;
+     while(*s)
+     {
+       if( *s==c )
+       {
+           p=s;
+           return p;
+       }
+       s++;
+     }
+     return p;
+}
+
+
+char *xstrrchr(char *s,char c)
+{
+     char *p=NULL;
+     while(*s)
+     {
+       if( *s==c )
+       {
+           p=s;
+       }
+       s++;
+     }
+     return p;
+}
+
+char *xstrcpy(char *dest,char *source,int n)
+{
+     int i=0;
+     char *p=dest;
+     while(*source)
+     {
+     *dest++=*source++;
+     }
+     *dest='\0';
+     return p;
+}
+
+char *xstrncpy(char *dest,char *source,int n)
+{
+     int i=0;
+     char *p=dest;
+     while(i++<n)
+     {
+     *dest++=*source++;
+     }
+     *dest='\0';
+     return p;
+}
+
+
+int xstrlen(char const *p)
+{
+    int i=0;
+    while(*p++)
+    ++i;
+    return i;
+}
+
+
+char *xstrdup(char const *s)
+{
+     int len=xstrlen(s);
+     char *p=(char*)malloc(sizeof( len ) );
+     
+     while(*s)
+     {
+       *p++=*s++;
+     }
+     *p='\0';
+      p=p-len;
+     return p;
+}       
+

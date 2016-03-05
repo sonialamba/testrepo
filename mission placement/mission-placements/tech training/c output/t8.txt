@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main(void)
+{
+	int i=0;
+	static int a=i;
+	if(a==i)
+		printf("Equal");
+	return 0;
+}

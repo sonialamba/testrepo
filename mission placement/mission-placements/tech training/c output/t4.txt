@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main(void)
+{
+	if(3)
+		printf("Hi");
+	if(3.4)
+		printf("Hello");
+	if(0)
+		printf("Little");
+	if(0.3)
+		printf("Baby");
+}

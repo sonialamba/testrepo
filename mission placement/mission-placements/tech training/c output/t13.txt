@@ -1,0 +1,22 @@
+#include <stdio.h>
+typedef struct node
+{
+    int value;
+    struct node * left;
+    struct node * right;
+}Node;
+Node * tree;
+Node * maketree(int number)
+{
+    Node p = { number, NULL, NULL };
+    return &p;
+}
+int main()
+{
+    int a[5] = { 1, 2, 3, 1, 4 };
+    int number;
+    number = a[0];
+    tree = maketree(number);
+    printf("Root has a value of %d\n", tree->value);
+    printf("Root has a value of %d\n", tree->value);
+}

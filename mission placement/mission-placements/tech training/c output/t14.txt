@@ -1,0 +1,11 @@
+void delete_from_end(Node *start)
+{
+	Node *p=start;
+	Node *q=start;
+	while(p->next!=NULL)
+	{
+		q=p;
+		p=p->next;
+	}
+	q->next=NULL;
+}
